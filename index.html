@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная страница</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <!-- Шапка сайта -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Логотип</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Личный кабинет</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <!-- Область для всплывающих уведомлений -->
+    <div class="container">
+      <div class="alert alert-success" role="alert">
+        Уведомление 1
+      </div>
+      <div class="alert alert-info" role="alert">
+        Уведомление 2
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <!-- Блок с изображением и описанием компании -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="logo.png" alt="Компания">
+        </div>
+        <div class="col-md-6">
+          <h3>Название компании</h3>
+          <p>Описание компании</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <!-- Блок с информацией о достоинствах компании -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Достоинство 1</h4>
+          <p>Описание достоинства 1</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Достоинство 2</h4>
+          <p>Описание достоинства 2</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Достоинство 3</h4>
+          <p>Описание достоинства 3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <!-- Блок с данными о пешеходных маршрутах города Москвы -->
+    <div class="container">
+      <h3>Маршруты города Москвы</h3>
+      <h1>Список маршрутов</h1>
+    <table id="routesTable">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Длительность</th>
+                <th>Сложность</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Данные маршрутов будут добавляться динамически с помощью JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+      <form>
+        <div class="form-group">
+          <label for="routeName">Поиск по названию:</label>
+          <input type="text" class="form-control" id="routeName">
+        </div>
+        <div class="form-group">
+          <label for="landmark">Поиск по достопримечательности:</label>
+          <select class="form-control" id="landmark">
+            <option value="">Выберите достопримечательность</option>
+            <!-- Варианты достопримечательностей -->
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Найти</button>
+      </form>
+      <!-- Навигационная панель для списка маршрутов -->
+      <ul class="pagination">
+        <!-- Список страниц -->
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <!-- Блок со списком доступных гидов -->
+    <div class="container">
+      <h3>Гиды на маршруте</h3>
+      <p>Выбранный маршрут: <span id="selectedRoute">Название маршрута</span></p>
+      <ul class="list-group">
+        <!-- Список гидов -->
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <!-- Блок с кнопкой "Оформить заявку" -->
+    <div class="container text-center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#orderModal">
+        Оформить заявку
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <!-- Форма для поиска гидов -->
+    <div class="container">
+      <h3>Поиск гидов</h3>
+      <form>
+        <div class="form-group">
+          <label for="language">Язык:</label>
+          <select class="form-control" id="language">
+            <option value="">Выберите язык</option>
+            <!-- Варианты языков -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="experienceFrom">Опыт работы от:</label>
+          <input type="number" class="form-control" id="experienceFrom">
+        </div>
+        <div class="form-group">
+          <label for="experienceTo">Опыт работы до:</label>
+          <input type="number" class="form-control" id="experienceTo">
+        </div>
+        <button type="submit" class="btn btn-primary">Найти</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <!-- Футер с контактными данными -->
+    <div class="container text-center">
+      <p>Контактная информация</p>
+    </div>
+  </footer>
+
+  <!-- Модальное окно для оформления заявки -->
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderModalLabel">Оформление заявки</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Форма для ввода деталей заказа -->
+          <form>
+            <!-- Поля формы -->
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          <button type="button" class="btn btn-primary">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
