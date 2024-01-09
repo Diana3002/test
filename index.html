@@ -166,28 +166,49 @@
   </footer>
 
   <!-- Модальное окно для оформления заявки -->
-  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <!-- Кнопка для открытия модального окна -->
+  <button id="openModal">Открыть заявку</button>
+    
+  <!-- Модальное окно -->
+  <div id="myModal" class="modal">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="orderModalLabel">Оформление заявки</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Форма для ввода деталей заказа -->
+          <h1>Оформление заявки</h1>
           <form>
-            <!-- Поля формы -->
+              <label for="routeName"><strong>Название маршрута:</strong></label>
+              <input type="text" id="route_Name" readonly>
+              
+              <label for="guideName"><strong>ФИО гида:</strong></label>
+              <input type="text" id="guideName" readonly>
+
+              <label for="excursionDate"><strong>Дата экскурсии:</strong></label>
+              <input type="date" id="excursionDate">
+
+              <label for="startTime"><strong>Время начала экскурсии:</strong></label>
+              <input type="time" id="startTime">
+
+              <label for="duration"><strong>Длительность экскурсии:</strong></label>
+              <select id="duration">
+                  <option value="1">1 час</option>
+                  <option value="2">2 часа</option>
+                  <option value="3">3 часа</option>
+              </select>
+
+              <label for="groupSize"><strong>Количество человек:</strong></label>
+              <input type="number" id="groupSize" min="1">
+
+              <label for="additionalOptions"><strong>Дополнительные опции:</strong></label>
+              <input type="checkbox" id="additionalOptions"> Дополнительные опции заказа
+
+              <div class="total-cost">
+                  <strong>Итоговая стоимость:</strong> <span id="totalCost">0</span> руб.
+              </div>
+              
+              <button type="submit">Отправить</button>
+              <button type="button" id="cancelModal">Отменить</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-          <button type="button" class="btn btn-primary">Отправить</button>
-        </div>
       </div>
-    </div>
   </div>
+   
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
